@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {Routes, Route} from 'react-router-dom';
+import ShowAll from './components/ShowAll';
+import CreateAuthor from './components/CreateAuthor';
+import EditAuthor from './components/EditAuthor';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Favorite Authors</h1>
+    
+
+    <Routes>
+      <Route path='/' element={<ShowAll/>}/>
+      <Route path='/authors/create' element={<CreateAuthor/>}/>
+      <Route path='/authors/edit/:id' element={<EditAuthor/>}/>
+    </Routes>
     </div>
   );
 }
